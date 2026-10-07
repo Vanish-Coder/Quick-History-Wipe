@@ -17,7 +17,7 @@ input.addEventListener("input", () => {
 
 chrome.commands.getAll().then((cmds) => {
   const c = cmds.find((c) => c.name === "clear-history");
-  document.getElementById("current-key").textContent = c?.shortcut || "Not set";
+  document.getElementById("current-key").textContent = c?.shortcut || "Not set by default";
 });
 
 document.getElementById("shortcuts").addEventListener("click", () => {
