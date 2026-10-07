@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { font-family: system-ui, sans-serif; width: 260px; padding: 12px; font-size: 13px; }
+    body { font-family: system-ui, sans-serif; width: 280px; padding: 12px; font-size: 13px; }
     input { width: 80px; padding: 4px; }
+    textarea { width: 100%; box-sizing: border-box; height: 90px; padding: 6px; font-family: inherit; font-size: 13px; }
     .row { margin-bottom: 12px; }
     button { padding: 6px 10px; cursor: pointer; }
     .hint { color: #666; font-size: 12px; margin-top: 4px; }
@@ -19,7 +20,12 @@
     <div class="hint" id="status">Saved automatically</div>
   </div>
   <div class="row">Keybind: <b id="current-key">…</b></div>
-  <button id="shortcuts">Change keybind</button>
+  <div class="row"><button id="shortcuts">Change keybind</button></div>
+  <div class="row">
+    <label for="links"><b>Links you want to delete:</b></label>
+    <textarea id="links" placeholder="youtube.com&#10;discord.com"></textarea>
+    <div class="hint">One per line. Includes subdomains and every page under them. Leave empty to delete all history in the time range.</div>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
