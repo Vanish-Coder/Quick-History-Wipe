@@ -32,7 +32,7 @@ Notes:
 
 ## Usage
 
-**Delete history:** press your keybind. The last N minutes of history are deleted immediately, and a green badge flashes on the extension icon for about 1.5 seconds to confirm.
+**Delete history:** press your keybind. The last N minutes of history are deleted immediately, and a green ✓ badge flashes on the extension icon for about 1.5 seconds to confirm.
 
 **Change the duration:**
 1. Click the extension icon.
@@ -56,7 +56,7 @@ In the popup, type sites into **Links you want to delete:**, one per line (it sa
 
 - **There is no confirmation and no undo.** Deleted history is gone.
 - If Chrome Sync is on, deletions sync to your other devices.
-- Your settings are saved with `chrome.storage.sync`, so that keeps their values stable.
+- Your settings (duration and site list) are saved locally with `chrome.storage.local`. They stay on the device and Chrome profile where you set them and do not sync to other devices.
 - The popup shows your current keybind, or "Not set by default" if you haven't assigned one.
 
 ## Updating
@@ -66,7 +66,7 @@ After editing any file, go to `chrome://extensions` and click the reload icon on
 ## Permissions
 
 - `history`: needed to search and delete history entries
-- `storage`: needed to remember your duration and site list
+- `storage`: needed to remember your duration and site list on this device
 
 ## Files
 
