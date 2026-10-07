@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Quick History Wipe",
+  "version": "1.0",
+  "description": "Delete the last N minutes of Chrome history with one keyboard shortcut.",
+  "permissions": ["history", "storage"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Quick History Wipe", "default_popup": "popup.html" },
+  "commands": {
+    "clear-history": {
+      "suggested_key": { "default": "Ctrl+Shift+1" },
+      "description": "Clear recent history"
+    }
+  }
+}
