@@ -56,7 +56,7 @@ In the popup, type sites into **Links you want to delete:**, one per line (it sa
 
 - **There is no confirmation and no undo.** Deleted history is gone.
 - If Chrome Sync is on, deletions sync to your other devices.
-- Your settings are saved with `chrome.storage.sync`, so they follow your Google account across devices where the extension is installed.
+- Your settings are saved with `chrome.storage.sync`, so that keeps their values stable.
 - The popup shows your current keybind, or "Not set by default" if you haven't assigned one.
 
 ## Updating
