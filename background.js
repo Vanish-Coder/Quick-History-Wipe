@@ -34,7 +34,7 @@ chrome.commands.onCommand.addListener(async (command) => {
   if (command !== "clear-history") return;
 
   const { minutes = DEFAULT_MINUTES, links = [] } =
-    await chrome.storage.sync.get(["minutes", "links"]);
+    await chrome.storage.local.get(["minutes", "links"]);
   const endTime = Date.now();
   const startTime = endTime - minutes * 60 * 1000;
 
