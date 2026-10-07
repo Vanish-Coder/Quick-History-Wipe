@@ -1,8 +1,10 @@
 const input = document.getElementById("minutes");
 const status = document.getElementById("status");
+const linksBox = document.getElementById("links");
 
-chrome.storage.sync.get("minutes").then(({ minutes = 30 }) => {
+chrome.storage.sync.get(["minutes", "links"]).then(({ minutes = 30, links = [] }) => {
   input.value = minutes;
+  linksBox.value = links.join("\n");
 });
 
 input.addEventListener("input", () => {
@@ -13,6 +15,14 @@ input.addEventListener("input", () => {
   } else {
     status.textContent = "Enter a number of 1 or more";
   }
+});
+
+linksBox.addEventListener("input", () => {
+  const links = linksBox.value
+    .split(/[\n,]+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  chrome.storage.sync.set({ links });
 });
 
 chrome.commands.getAll().then((cmds) => {
