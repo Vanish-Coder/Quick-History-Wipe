@@ -3,6 +3,7 @@
 A tiny Chrome extension that deletes the last N minutes of your browsing history with a single keyboard shortcut. No menus, no confirmation dialogs.
 
 - Deletes **history only** (nothing else: no cookies, cache, or downloads)
+- Optionally deletes only history for sites you list (for example `youtube.com`)
 - Only affects the Chrome profile it is installed in
 - Default duration: **30 minutes** (changeable to any number)
 - No default keybind: you choose your own
@@ -31,7 +32,7 @@ Notes:
 
 ## Usage
 
-**Delete history:** press your keybind. The last N minutes of history are deleted immediately, and a green ✓ badge flashes on the extension icon for about 1.5 seconds to confirm.
+**Delete history:** press your keybind. The last N minutes of history are deleted immediately, and a green badge flashes on the extension icon for about 1.5 seconds to confirm.
 
 **Change the duration:**
 1. Click the extension icon.
@@ -40,11 +41,22 @@ Notes:
 
 For "everything", use a very large number such as `5256000` (about 10 years).
 
+## Deleting only specific sites
+
+In the popup, type sites into **Links you want to delete:**, one per line (it saves automatically).
+
+- `youtube.com` matches youtube.com, www.youtube.com, m.youtube.com, and every page under them (such as `youtube.com/watch?v=...`).
+- You can include a path to be more specific, like `youtube.com/watch`.
+- Only entries visited within your chosen time window are deleted.
+- **If the list is empty, the keybind deletes all history in the time window.**
+- The badge shows how many history entries were deleted.
+- Each matching page is removed completely, including any older visits to that same URL outside the time window.
+
 ## Things to know
 
 - **There is no confirmation and no undo.** Deleted history is gone.
 - If Chrome Sync is on, deletions sync to your other devices.
-- The duration setting is saved with `chrome.storage.sync`, so it follows your Google account across devices where the extension is installed.
+- Your settings are saved with `chrome.storage.sync`, so they follow your Google account across devices where the extension is installed.
 - The popup shows your current keybind, or "Not set by default" if you haven't assigned one.
 
 ## Updating
@@ -53,8 +65,8 @@ After editing any file, go to `chrome://extensions` and click the reload icon on
 
 ## Permissions
 
-- `history`: needed to delete history entries
-- `storage`: needed to remember your chosen duration
+- `history`: needed to search and delete history entries
+- `storage`: needed to remember your duration and site list
 
 ## Files
 
@@ -62,4 +74,4 @@ After editing any file, go to `chrome://extensions` and click the reload icon on
 | --- | --- |
 | `manifest.json` | Extension config and command definition |
 | `background.js` | Listens for the keybind and deletes history |
-| `popup.html` / `popup.js` | Popup for setting the duration and linking to the shortcuts page |
+| `popup.html` / `popup.js` | Popup for setting the duration, the site list, and linking to the shortcuts page |
