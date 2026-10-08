@@ -1,11 +1,24 @@
 {
   "manifest_version": 3,
   "name": "Quick History Wipe",
-  "version": "1.0",
+  "version": "2.0.2",
   "description": "Delete the last N minutes of Chrome history with one keyboard shortcut.",
   "permissions": ["history", "storage"],
   "background": { "service_worker": "background.js" },
-  "action": { "default_title": "Quick History Wipe", "default_popup": "popup.html" },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Quick History Wipe",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
   "commands": {
     "clear-history": {
       "description": "Clear recent history"
