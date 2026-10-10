@@ -10,7 +10,7 @@ A tiny Chrome extension that deletes the last N minutes of your browsing history
 
 ## Setup
 
-1. Put these files together in one folder: `manifest.json`, `background.js`, `popup.html`, `popup.js`.
+1. Download the latest release (or whatever release you want).
 2. Open `chrome://extensions` in Chrome.
 3. Turn on **Developer mode** (top right).
 4. Click **Load unpacked** and select the folder.
